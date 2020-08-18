@@ -9,10 +9,10 @@ branches:
   - master # auto build and deploy in only master branch
 script: # run after installed
 - npm install # install node module
-- npm run build # build project
+- npm run build || true # build project
 install:
   npm install -g firebase-tools # install firebase-cli
 after_success:
-- firebase use --token 1//0gtj3UeucuNuOCgYIARAAGBASNwF-L9IrMTR3dwwQwvt6e8SIokhJEsBxk1I7xCf4pCjo-TobGCW4YWElAyCO2APv9Qz4dTDCiD0 # set firebase token
-- firebase use --add deploy-react-firebase-demo # set current project
+- firebase use --token ${FIREBASE_TOKEN} # set firebase token
+- firebase use --add ${PROJECT_ID} # set current project
 - firebase deploy --non-interactive --token "${FIREBASE_TOKEN}" # deploy project
