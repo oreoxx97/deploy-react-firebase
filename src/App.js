@@ -9,6 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Oreoxx =>> 1X97 Ma leaw EIEI
+		  Deploy Travis
         </p>
         <a
           className="App-link"
